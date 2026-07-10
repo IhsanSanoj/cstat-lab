@@ -1,0 +1,23 @@
+s=input("enter your string")
+st=[]
+f=0
+dict={'(':')','[':']','{':'}'}
+for i in s:
+	if i in '([{':
+		st.append(i)
+	elif i in '}])':
+		if len(st)==0:
+			f=1
+			break
+		top=st.pop()
+		if dict[top]!=i:
+			f=1
+			break
+if st!=[]:
+	f=1
+if f==0:
+	print("valid")
+else:
+	print("invalid")
+
+	
