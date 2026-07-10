@@ -1,0 +1,6 @@
+dict1={"math":50,"science":60,"history":50}
+avg=0
+for i in dict1.values():
+	avg+=i
+avg=avg/3
+print("average is ",avg)
