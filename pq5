@@ -1,0 +1,9 @@
+
+t=("apple","orange","mango")
+f=input("enter your fruit name(small) ")
+if f in t:
+	print("yes", f,"is present")
+else:
+	print("no", f," is not present")
+	
+	
