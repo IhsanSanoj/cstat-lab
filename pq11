@@ -17,10 +17,11 @@ for char in text:
         lowercase += 1
 
 
-    if char in ".!?":
-        sentences += 1
+    
     elif not char.isalnum() and not char.isspace():
         special += 1
+        if char in ".!?":
+        	sentences += 1
 
 # Count words
 words = len(text.split())
