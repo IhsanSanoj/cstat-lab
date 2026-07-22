@@ -1,0 +1,18 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+s=input("Enter your string")
+v=c=w=q=0
+for i in s:
+    if i.isalpha():
+        if i.lower() in "aeiou":
+            v+=1
+        else:
+            c+=1
+    elif i=='?':
+        q+=1
+for word in s.split():
+    w+=1
+print("number of vowels is ",v)
+print("number of consonants is ",c)
+print("number of words is ",w)
+print("number of ? is ",q)
