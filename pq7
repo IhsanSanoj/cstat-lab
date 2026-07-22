@@ -1,0 +1,12 @@
+# Read a decimal number
+n = int(input("Enter a decimal number: "))
+
+# Convert to different bases
+binary = bin(n)
+octal = oct(n)
+hexa = hex(n)
+
+# Display the results
+print("Binary      :", binary)
+print("Octal       :", octal)
+print("Hexadecimal :", hexa)
