@@ -1,0 +1,14 @@
+r=int(input("enter rows"))
+c=int(input("enter columns"))
+sparse={}
+for i in range(r):
+    for j in range(c):
+        value=int(input("enter value"))
+        if value!=0:
+            sparse[(i,j)]=value
+print(sparse)
+for i in range(r):
+    for j in range(c):
+        print(sparse.get((i, j), 0), end=" ")
+    print()
+
