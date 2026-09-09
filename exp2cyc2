@@ -1,0 +1,53 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Import dataset
+df = pd.read_csv('/content/BankChurners.csv')
+
+# Check missing values
+print("Missing values:")
+print(df.isnull().sum())
+
+# Plot Attrition Flag ratio
+df['Attrition_Flag'].value_counts().plot(kind='bar')
+plt.title('Attrition Flag')
+plt.xlabel('Customer Type')
+plt.ylabel('Number of Customers')
+plt.show()
+
+# Bar chart
+df['Education_Level'].value_counts().plot(kind='bar')
+plt.title('Number of Customers by Education Level')
+plt.xlabel('Education Level')
+plt.ylabel('Number of Customers')
+plt.show()
+
+# Box plot
+sns.boxplot(y=df['Credit_Limit'])
+plt.title('Box Plot of Credit Limit')
+plt.ylabel('Credit Limit')
+plt.show()
+
+# Descriptive statistics
+print("Descriptive Statistics:")
+print(df.describe())
+
+# Correlation heatmap
+numeric_df = df.select_dtypes(include='number')
+correlation = numeric_df.corr()
+
+plt.figure(figsize=(12, 8))
+sns.heatmap(correlation, annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap')
+plt.show()
+
+# Remove unnecessary columns
+df = df.drop(columns=[
+    'CLIENTNUM',
+    'Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1',
+    'Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2'
+])
+
+print("Final dataset:")
+print(df.head())
