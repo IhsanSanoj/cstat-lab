@@ -1,0 +1,25 @@
+import pandas as pd
+data = {
+    'Product': ['Laptop', 'Mobile', 'Laptop', 'Mobile'],
+    'Region': ['North', 'North', 'South', 'South'],
+    'Sales': [50000, 30000, 45000, 35000],
+    'Gender': ['Male', 'Female', 'Male', 'Female'],
+    'Purchase_Status': ['Yes', 'Yes', 'No', 'Yes']
+}
+
+df=pd.DataFrame(data)
+
+pivot_table= pd.pivot_table(
+df,values='Sales',
+index='Region',
+columns='Product',
+aggfunc='sum')
+print("pivot table")
+print(pivot_table)
+
+cross_tab=pd.crosstab(
+df['Gender'],df['Purchase_Status']                        
+)
+
+print("\nCross Tabulation:")
+print(cross_tab)
