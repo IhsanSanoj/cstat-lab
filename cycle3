@@ -1,0 +1,175 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNDbA9ZWWXNIUXkibYM6TBL",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/IhsanSanoj/cstat-lab/blob/main/cycle3\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "d3mslQ5vtEWo"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "x=np.arange(1,6)\n",
+        "y= x**2\n",
+        "plt.plot(x,y)\n",
+        "plt.show()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "a=np.array([[[1,2],[3,4]],[[5,6],[7,8]]])\n",
+        "diagonals=np.diagonal(a,axis1=1,axis2=2)\n",
+        "print(diagonals)"
+      ],
+      "metadata": {
+        "id": "QAnFnQgot1Xm"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "a=np.array([[1,2],[3,4],[5,6],[7,8]])\n",
+        "b=a.flatten()\n",
+        "print(b)"
+      ],
+      "metadata": {
+        "id": "S3tvM7-4xRTk"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "n=10\n",
+        "phi=(1+np.sqrt(5))/2\n",
+        "psi=(1-np.sqrt(5))/2\n",
+        "for i in range(n):\n",
+        "  fib=round((phi**i-psi**i)/np.sqrt(5))\n",
+        "  print(fib,end=\" \")"
+      ],
+      "metadata": {
+        "id": "VREA_3eIxF6U"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "a=np.array([[1,2],[3,4]])\n",
+        "inverse=np.linalg.inv(a)\n",
+        "print(inverse)"
+      ],
+      "metadata": {
+        "id": "d1lUQOQQyjX_"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "a = np.array([1, 2, 3])\n",
+        "b = np.array([4, 5, 6])\n",
+        "inner=np.inner(a,b)\n",
+        "outer=np.outer(a,b)\n",
+        "cross=np.cross(a,b)\n",
+        "print(inner)\n",
+        "print(outer)\n",
+        "print(cross)\n"
+      ],
+      "metadata": {
+        "id": "y4hJ1zq-zFB5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "a = np.array([[1, 2],\n",
+        "              [3, 4]])\n",
+        "\n",
+        "b = np.array([[5, 6],\n",
+        "              [7, 8]])\n",
+        "c=np.kron(a,b)\n",
+        "print(c)"
+      ],
+      "metadata": {
+        "id": "KG92OAva0RPB"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "a=np.array([[1,2],[3,4]])\n",
+        "b=a.tolist()\n",
+        "print(b)"
+      ],
+      "metadata": {
+        "id": "2aJgpPoT0hj8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "a=np.array([[1,2],[3,4]])\n",
+        "q,r=np.linalg.qr(a)\n",
+        "print(\"Q=\")\n",
+        "print(q)\n",
+        "print(\"R=\")\n",
+        "print(r)\n"
+      ],
+      "metadata": {
+        "id": "L7RLWXTE1L7F"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
