@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+
+heights = [160, 165, 170, 172, 168, 175, 180,
+           162, 169, 174, 166, 171, 178, 164]
+
+plt.hist(heights, bins=5, edgecolor='black')
+plt.xlabel("Height (cm)")
+plt.ylabel("Number of Students")
+plt.title("Height Distribution")
+plt.show()
