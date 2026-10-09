@@ -1,0 +1,100 @@
+
+import matplotlib.pyplot as plt
+
+# Dataset
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+sales = [200, 250, 180, 300, 280, 350]
+profit = [40, 50, 30, 70, 60, 80]
+expenses = [160, 200, 150, 230, 220, 270]
+
+# (a) Line plot of profit
+plt.figure()
+plt.plot(months, profit)
+plt.title("Monthly Profit")
+plt.xlabel("Month")
+plt.ylabel("Profit")
+plt.show()
+
+# (b) Styled line plot
+plt.figure()
+plt.plot(months, sales, color='red',
+         linestyle='--', marker='o')
+plt.title("Styled Sales Plot")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.grid()
+plt.show()
+
+# (c) Multiple line plot
+plt.figure()
+plt.plot(months, sales, label='Sales')
+plt.plot(months, profit, label='Profit')
+plt.plot(months, expenses, label='Expenses')
+plt.title("Sales, Profit and Expenses")
+plt.xlabel("Month")
+plt.ylabel("Amount")
+plt.legend()
+plt.show()
+
+# (d) Scatter plot
+plt.figure()
+plt.scatter(sales, profit)
+plt.title("Sales vs Profit")
+plt.xlabel("Sales")
+plt.ylabel("Profit")
+plt.show()
+
+# (e) Bar chart
+plt.figure()
+plt.bar(months, sales)
+plt.title("Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.show()
+
+# (f) Save bar chart
+plt.figure()
+plt.bar(months, sales)
+plt.title("Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.savefig("sales_chart.png")
+plt.show()
+
+# (g) Histogram
+plt.figure()
+plt.hist(sales, bins=5, edgecolor='black')
+plt.title("Sales Distribution")
+plt.xlabel("Sales")
+plt.ylabel("Frequency")
+plt.show()
+
+# (h) Pie chart
+plt.figure()
+plt.pie(sales, labels=months, autopct='%1.1f%%')
+plt.title("Monthly Sales Distribution")
+plt.show()
+
+# (i) Subplots
+plt.figure(figsize=(10, 4))
+
+plt.subplot(1, 2, 1)
+plt.plot(months, sales, marker='o')
+plt.title("Sales")
+
+plt.subplot(1, 2, 2)
+plt.bar(months, profit)
+plt.title("Profit")
+
+plt.tight_layout()
+plt.show()
+
+# (j) Stack plot
+plt.figure()
+plt.stackplot(months, profit, expenses,
+              labels=['Profit', 'Expenses'])
+plt.title("Profit and Expenses")
+plt.xlabel("Month")
+plt.ylabel("Amount")
+plt.legend()
+plt.show()
